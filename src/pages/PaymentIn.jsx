@@ -1,7 +1,12 @@
 import React from "react";
+import PaymentInContent from "../components/DashboardPages/PaymentIn/PaymentInContent";
 
 const PaymentIn = () => {
-  return <div>PaymentIn</div>;
+  return (
+    <div>
+      <PaymentInContent />
+    </div>
+  );
 };
 
 export default PaymentIn;
