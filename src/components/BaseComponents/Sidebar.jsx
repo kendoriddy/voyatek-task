@@ -42,6 +42,9 @@ function Sidebar() {
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
+        "& .MuiDrawer-paper": {
+          borderRight: "none",
+        },
       }}
     >
       <Box
@@ -148,12 +151,15 @@ function Sidebar() {
                 </ListItem>
               </List>
             </Collapse>
+
             <ListItem button component={Link} to="/dashboard/payment-in">
               <ListItemIcon sx={{ marginRight: "16px", minWidth: "0" }}>
                 <img src={monetizationSVG} alt="payables" />
               </ListItemIcon>
               <ListItemText primary="Payables" />
+              <ChevronRightIcon sx={{ color: "#748684" }} />
             </ListItem>
+
             <ListItem button component={Link} to="/dashboard/payment-in">
               <ListItemIcon sx={{ marginRight: "16px", minWidth: "0" }}>
                 <img src={insertSVG} alt="reports" />
