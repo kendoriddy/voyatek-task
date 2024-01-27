@@ -6,7 +6,7 @@ const Welcome = () => {
     <div className="flex flex-col gap-10 justify-center items-center w-full">
       <div className="flex justify-center items-center w-full text-center">
         <div></div>
-        <span className="flex-grow font-inter text-[23px] font-medium text-[#012320]">
+        <span className="flex-grow font-inter text-[23px] font-medium text-[#012320] ml-[25px]">
           PROJECT-X
         </span>
         <img src={close} alt="close icon" />
