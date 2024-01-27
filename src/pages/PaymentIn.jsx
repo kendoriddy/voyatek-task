@@ -1,12 +1,12 @@
 import React from "react";
-import PaymentInContent from "../components/DashboardPages/PaymentIn/PaymentInContent";
 import Header from "../components/DashboardPages/PaymentIn/Header";
+import PaymentInCards from "../components/DashboardPages/PaymentIn/PaymentInCards";
 
 const PaymentIn = () => {
   return (
     <div>
       <Header />
-      <PaymentInContent />
+      <PaymentInCards />
     </div>
   );
 };
