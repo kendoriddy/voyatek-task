@@ -66,11 +66,22 @@ const PaymentInCards = () => {
                 alt="gain"
                 className="text-[#0C7C10] text-[14px] font-normal"
               />{" "}
-              <span className="text-[#748684] text-[14px] font-normal">{card.gain}</span>
+              <span className="text-[#0C7C10] text-[14px] font-normal">
+                {card.gain.split(" ")[0]}
+              </span>
+              <span className="text-[#748684] text-[14px] font-normal">
+                {card.gain.split(" ").slice(1).join(" ")}
+              </span>
             </div>
           ) : (
             <div className="flex items-center gap-1">
-              <img src={arrowOutward1} alt="loss" /> <span>{card.loss}</span>
+              <img src={arrowOutward1} alt="loss" />
+              <span className="text-[#7C0C14] text-[14px] font-normal">
+                {card.loss.split(" ")[0]}
+              </span>
+              <span className="text-[#748684] text-[14px] font-normal">
+                {card.loss.split(" ").slice(1).join(" ")}
+              </span>
             </div>
           )}
         </div>
