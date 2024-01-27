@@ -27,7 +27,7 @@ const cardsWithoutArrow = ["rev", "rev2"];
 
 const PaymentInCards = () => {
   return (
-    <div className="grid grid-cols-4 gap-4 mt-8">
+    <div className="grid grid-cols-4 gap-x-4 gap-y-8 mt-8">
       {paymentsData.cards.map((card, index) => (
         <div
           key={index}

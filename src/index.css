@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.custom-header-class {
+  color: #748684;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.custom-body-class {
+  color: #012320;
+  font-size: 12px;
+  font-weight: 500;
+}
