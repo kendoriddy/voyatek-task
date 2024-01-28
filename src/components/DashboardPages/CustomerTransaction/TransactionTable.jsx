@@ -3,6 +3,7 @@ import { DataGrid } from "@mui/x-data-grid";
 import chips1 from "../../../assets/images/svg/chips.svg";
 import chips from "../../../assets/images/svg/chips1.svg";
 import { MoreVert } from "@mui/icons-material";
+import CustomDataGrid from "../../../assets/utils/CustomDataGrid";
 
 const columns = [
   { field: "referenceNo", headerName: "Reference No", flex: 1 },
@@ -109,23 +110,15 @@ export default function TransactionTable() {
   return (
     <div className="flex flex-col gap-4 w-full" style={{ width: "100%" }}>
       <div className="flex justify-between items-center">
-        <span className="text-[#012320] text-[16px] font-medium">Payment History</span>
+        <span className="text-[#012320] text-[16px] font-medium">
+          Payment History
+        </span>
         <div className="flex items-center justify-end gap-4">
           <img src={chips} alt="button" className="cursor-pointer" />
           <img src={chips1} alt="button" className="cursor-pointer" />
         </div>
       </div>
-      <DataGrid
-        rows={rows}
-        columns={columns.map((col) => ({
-          ...col,
-          headerClassName: "custom-header-class",
-        }))}
-        pageSize={1000}
-        className="border-none"
-        style={{ border: "none", width: "100%" }}
-        checkboxSelection
-      />
+      <CustomDataGrid columns={columns} rows={rows} />
     </div>
   );
 }
