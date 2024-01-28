@@ -3,11 +3,19 @@ import { DataGrid } from "@mui/x-data-grid";
 import chips1 from "../../../assets/images/svg/chips.svg";
 import chips from "../../../assets/images/svg/chips1.svg";
 import { MoreVert } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
 const columns = [
   //   { field: "id", headerName: "ID", width: 165 },
   { field: "referenceNo", headerName: "Reference No", width: 200 },
-  { field: "customerName", headerName: "Customer name", width: 200 },
+  {
+    field: "customerName",
+    headerName: "Customer name",
+    width: 200,
+    renderCell: (params) => (
+      <Link to="/dashboard/payment-in/customer-transaction">{params.value}</Link>
+    ),
+  },
   {
     field: "status",
     headerName: "Status",
@@ -61,7 +69,7 @@ const rows = [
   {
     id: 2,
     referenceNo: "X-398-5783",
-    customerName: "Robert McBrown",
+    customerName: "Ronald Richards",
     status: "Partially paid",
     paymentType: "Transfer",
     amount: "₦15245.66",
@@ -70,7 +78,7 @@ const rows = [
   {
     id: 3,
     referenceNo: "X-398-5783",
-    customerName: "Robert McBrown",
+    customerName: "Jenny Wilson",
     status: "Partially paid",
     paymentType: "Transfer",
     amount: "₦15245.66",
@@ -79,7 +87,7 @@ const rows = [
   {
     id: 4,
     referenceNo: "X-398-5783",
-    customerName: "Robert McBrown",
+    customerName: "Robert Fox",
     status: "Partially paid",
     paymentType: "Transfer",
     amount: "₦15245.66",
@@ -88,7 +96,7 @@ const rows = [
   {
     id: 5,
     referenceNo: "X-398-5783",
-    customerName: "Robert McBrown",
+    customerName: "Floyd Miles",
     status: "Paid",
     paymentType: "Transfer",
     amount: "₦15245.66",
@@ -97,7 +105,7 @@ const rows = [
   {
     id: 6,
     referenceNo: "X-398-5783",
-    customerName: "Robert McBrown",
+    customerName: "Savannah Nguyen",
     status: "Paid",
     paymentType: "Transfer",
     amount: "₦15245.66",
@@ -106,7 +114,7 @@ const rows = [
   {
     id: 7,
     referenceNo: "X-398-5783",
-    customerName: "Robert McBrown",
+    customerName: "Darrell Steward",
     status: "Partially paid",
     paymentType: "Transfer",
     amount: "₦15245.66",
