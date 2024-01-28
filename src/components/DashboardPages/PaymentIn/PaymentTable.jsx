@@ -6,11 +6,12 @@ import { MoreVert } from "@mui/icons-material";
 
 const columns = [
   //   { field: "id", headerName: "ID", width: 165 },
-  { field: "referenceNo", headerName: "Reference No" },
-  { field: "customerName", headerName: "Customer name" },
+  { field: "referenceNo", headerName: "Reference No", width: 150 },
+  { field: "customerName", headerName: "Customer name", width: 150 },
   {
     field: "status",
     headerName: "Status",
+    width: 150,
     renderCell: (params) => (
       <div
         style={{
@@ -31,9 +32,9 @@ const columns = [
       </div>
     ),
   },
-  { field: "paymentType", headerName: "Payment type" },
-  { field: "amount", headerName: "Amount" },
-  { field: "date", headerName: "Date" },
+  { field: "paymentType", headerName: "Payment type", width: 150 },
+  { field: "amount", headerName: "Amount", width: 150 },
+  { field: "date", headerName: "Date", width: 150 },
   {
     field: "action",
     headerName: "Action",
