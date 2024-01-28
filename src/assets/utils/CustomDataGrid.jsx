@@ -1,6 +1,5 @@
 import React from "react";
 import { DataGrid } from "@mui/x-data-grid";
-import { MoreVert } from "@mui/icons-material";
 
 const CustomDataGrid = ({ columns, rows }) => {
   return (
