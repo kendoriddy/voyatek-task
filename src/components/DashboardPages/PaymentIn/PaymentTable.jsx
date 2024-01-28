@@ -6,12 +6,11 @@ import { MoreVert } from "@mui/icons-material";
 
 const columns = [
   //   { field: "id", headerName: "ID", width: 165 },
-  { field: "referenceNo", headerName: "Reference No", width: 200 },
-  { field: "customerName", headerName: "Customer name", width: 200 },
+  { field: "referenceNo", headerName: "Reference No" },
+  { field: "customerName", headerName: "Customer name" },
   {
     field: "status",
     headerName: "Status",
-    width: 200,
     renderCell: (params) => (
       <div
         style={{
@@ -32,9 +31,9 @@ const columns = [
       </div>
     ),
   },
-  { field: "paymentType", headerName: "Payment type", width: 200 },
-  { field: "amount", headerName: "Amount", width: 200 },
-  { field: "date", headerName: "Date", width: 200 },
+  { field: "paymentType", headerName: "Payment type" },
+  { field: "amount", headerName: "Amount" },
+  { field: "date", headerName: "Date" },
   {
     field: "action",
     headerName: "Action",
@@ -116,9 +115,11 @@ const rows = [
 
 export default function PaymentTable() {
   return (
-    <div className="flex flex-col gap-4 w-full" style={{ width: "100%" }}>
-      <div className="flex justify-between items-center">
-        <span className="text-[#012320] text-[16px] font-medium">Payment History</span>
+    <div className="flex flex-col gap-4 w-full">
+      <div className="flex flex-col md:flex-row md:justify-between md:items-center">
+        <span className="text-[#012320] text-[16px] font-medium mb-4 md:mb-0">
+          Payment History
+        </span>
         <div className="flex items-center justify-end gap-4">
           <img src={chips} alt="button" className="cursor-pointer" />
           <img src={chips1} alt="button" className="cursor-pointer" />

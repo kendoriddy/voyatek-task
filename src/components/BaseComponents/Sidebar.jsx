@@ -24,7 +24,7 @@ import leslie from "../../assets/images/jpg/leslie.jpg";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
-function Sidebar() {
+function Sidebar({ isSidebarOpen }) {
   const location = useLocation();
   const [open, setOpen] = useState(false);
 
@@ -32,32 +32,33 @@ function Sidebar() {
     setOpen(!open);
   };
 
-  return (
-    <Drawer
-      variant="permanent"
-      anchor="left"
-      open={true}
+  return isSidebarOpen ? (
+    <Box
       sx={{
-        width: "20vw",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
-        "& .MuiDrawer-paper": {
-          borderRight: "none",
-        },
+        width: { xs: "100%", sm: "20vw" },
+        flexShrink: 0,
       }}
     >
       <Box
         sx={{
-          width: "20vw",
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
           height: "100%",
         }}
       >
-        <Box>
-          <Typography variant="h6" component="div" sx={{ padding: "40px 0 0 16px" }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            height: "100%",
+          }}
+        >
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ padding: "40px 0 0 16px" }}
+          >
             PROJECT-X
           </Typography>
           <List sx={{ width: "20vw", paddingTop: "40px" }}>
@@ -78,9 +79,16 @@ function Sidebar() {
               onClick={handleClick}
               sx={{
                 backgroundColor:
-                  location.pathname === "/dashboard/payment-in" ? "#025C56" : "transparent",
-                borderRadius: location.pathname === "/dashboard/payment-in" ? "100px" : "",
-                color: location.pathname === "/dashboard/payment-in" ? "white" : "",
+                  location.pathname === "/dashboard/payment-in"
+                    ? "#025C56"
+                    : "transparent",
+                borderRadius:
+                  location.pathname === "/dashboard/payment-in" ? "100px" : "",
+                color:
+                  location.pathname === "/dashboard/payment-in" ? "white" : "",
+                "&:hover": {
+                  backgroundColor: "#025C56",
+                },
               }}
             >
               <ListItemIcon sx={{ marginRight: "16px", minWidth: "0" }}>
@@ -103,7 +111,11 @@ function Sidebar() {
                 >
                   <ListItemText
                     primary="Invoices"
-                    sx={{ fontSize: "14px", fontWeight: "400", color: "#748684" }}
+                    sx={{
+                      fontSize: "14px",
+                      fontWeight: "400",
+                      color: "#748684",
+                    }}
                   />
                 </ListItem>
                 <ListItem
@@ -111,7 +123,10 @@ function Sidebar() {
                   component={Link}
                   to="/dashboard/payment-in"
                   sx={{
-                    color: location.pathname === "/dashboard/payment-in" ? "#025C56" : "#748684",
+                    color:
+                      location.pathname === "/dashboard/payment-in"
+                        ? "#025C56"
+                        : "#748684",
                     paddingLeft: "32px",
                   }}
                 >
@@ -119,9 +134,15 @@ function Sidebar() {
                     primary="Payments In"
                     sx={{
                       fontSize: "14px",
-                      color: location.pathname === "/dashboard/payment-in" ? "#025C56" : "#748684",
+                      color:
+                        location.pathname === "/dashboard/payment-in"
+                          ? "#025C56"
+                          : "#748684",
                       "& span": {
-                        fontWeight: location.pathname === "/dashboard/payment-in" ? "600" : "400",
+                        fontWeight:
+                          location.pathname === "/dashboard/payment-in"
+                            ? "600"
+                            : "400",
                       },
                     }}
                   />
@@ -134,7 +155,11 @@ function Sidebar() {
                 >
                   <ListItemText
                     primary="Products"
-                    sx={{ fontSize: "14px", fontWeight: "400", color: "#748684" }}
+                    sx={{
+                      fontSize: "14px",
+                      fontWeight: "400",
+                      color: "#748684",
+                    }}
                   />
                 </ListItem>
                 <ListItem
@@ -146,7 +171,11 @@ function Sidebar() {
                 >
                   <ListItemText
                     primary="Customers"
-                    sx={{ fontSize: "14px", fontWeight: "400", color: "#748684" }}
+                    sx={{
+                      fontSize: "14px",
+                      fontWeight: "400",
+                      color: "#748684",
+                    }}
                   />
                 </ListItem>
               </List>
@@ -204,8 +233,8 @@ function Sidebar() {
           </Box>
         </Box>
       </Box>
-    </Drawer>
-  );
+    </Box>
+  ) : null;
 }
 
 export default Sidebar;
