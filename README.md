@@ -33,7 +33,7 @@ List the key features of your payment platform. This can include things like:
 
 ## Live Demo
 
-[Live demo](https://mathe-magic.netlify.app/)
+[Live demo](https://project-x-by-troo.netlify.app/)
 
 ## Getting Started
 
