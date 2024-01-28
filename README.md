@@ -6,12 +6,12 @@ PROJECT-X
 
 - [Description](#description)
 - [Features](#features)
-- [Live Demo](#LiveDemo)
-- [Getting Started](#GettingStarted)
-  - [Cloning the project](#Cloningtheproject)
-  - [Getting packages and dependencies](#Gettingpackagesanddependencies)
-  - [Building](#Building)
-  - [Running](#Running)
+- [Live Demo](#live-demo)
+- [Getting Started](#getting-started)
+  - [Cloning the project](#cloning-the-project)
+  - [Getting packages and dependencies](#getting-packages-and-dependencies)
+  - [Building](#building)
+  - [Running](#running)
 
 ## Description
 
