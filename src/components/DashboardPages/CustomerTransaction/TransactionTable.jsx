@@ -1,5 +1,4 @@
 import * as React from "react";
-import { DataGrid } from "@mui/x-data-grid";
 import chips1 from "../../../assets/images/svg/chips.svg";
 import chips from "../../../assets/images/svg/chips1.svg";
 import { MoreVert } from "@mui/icons-material";
