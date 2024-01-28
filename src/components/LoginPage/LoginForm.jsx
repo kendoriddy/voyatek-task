@@ -33,16 +33,13 @@ const LoginForm = () => {
             sx={{
               "& .MuiOutlinedInput-root": {
                 "& fieldset": {
-                  borderColor: "#025C56",
-                  border: "1px solid #025c56",
+                  borderColor: "#BDC3C3",
                 },
                 "&:hover fieldset": {
                   borderColor: "#025C56",
-                  border: "1px solid #025c56",
                 },
                 "&.Mui-focused fieldset": {
                   borderColor: "#025C56",
-                  border: "1px solid #025c56",
                 },
               },
             }}
@@ -69,16 +66,13 @@ const LoginForm = () => {
               sx={{
                 "& .MuiOutlinedInput-root": {
                   "& fieldset": {
-                    borderColor: "#025C56",
-                    border: "1px solid #025c56",
+                    borderColor: "#BDC3C3",
                   },
                   "&:hover fieldset": {
                     borderColor: "#025C56",
-                    border: "1px solid #025c56",
                   },
                   "&.Mui-focused fieldset": {
                     borderColor: "#025C56",
-                    border: "1px solid #025c56",
                   },
                 },
               }}
