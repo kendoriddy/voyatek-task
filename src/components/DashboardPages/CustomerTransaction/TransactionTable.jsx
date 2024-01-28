@@ -9,14 +9,6 @@ const columns = [
   //   { field: "id", headerName: "ID", width: 165 },
   { field: "referenceNo", headerName: "Reference No", flex: 1 },
   {
-    field: "customerName",
-    headerName: "Customer name",
-    flex: 1,
-    renderCell: (params) => (
-      <Link to="/dashboard/payment-in/customer-transaction">{params.value}</Link>
-    ),
-  },
-  {
     field: "status",
     headerName: "Status",
     flex: 1,
@@ -60,7 +52,6 @@ const rows = [
   {
     id: 1,
     referenceNo: "X-398-5783",
-    customerName: "Robert McBrown",
     status: "Paid",
     paymentType: "Transfer",
     amount: "₦15245.66",
@@ -69,7 +60,6 @@ const rows = [
   {
     id: 2,
     referenceNo: "X-398-5783",
-    customerName: "Ronald Richards",
     status: "Partially paid",
     paymentType: "Transfer",
     amount: "₦15245.66",
@@ -78,7 +68,6 @@ const rows = [
   {
     id: 3,
     referenceNo: "X-398-5783",
-    customerName: "Jenny Wilson",
     status: "Partially paid",
     paymentType: "Transfer",
     amount: "₦15245.66",
@@ -87,7 +76,6 @@ const rows = [
   {
     id: 4,
     referenceNo: "X-398-5783",
-    customerName: "Robert Fox",
     status: "Partially paid",
     paymentType: "Transfer",
     amount: "₦15245.66",
@@ -96,7 +84,6 @@ const rows = [
   {
     id: 5,
     referenceNo: "X-398-5783",
-    customerName: "Floyd Miles",
     status: "Paid",
     paymentType: "Transfer",
     amount: "₦15245.66",
@@ -105,7 +92,6 @@ const rows = [
   {
     id: 6,
     referenceNo: "X-398-5783",
-    customerName: "Savannah Nguyen",
     status: "Paid",
     paymentType: "Transfer",
     amount: "₦15245.66",
@@ -114,7 +100,6 @@ const rows = [
   {
     id: 7,
     referenceNo: "X-398-5783",
-    customerName: "Darrell Steward",
     status: "Partially paid",
     paymentType: "Transfer",
     amount: "₦15245.66",
@@ -122,7 +107,7 @@ const rows = [
   },
 ];
 
-export default function PaymentTable() {
+export default function TransactionTable() {
   return (
     <div className="flex flex-col gap-4 w-full" style={{ width: "100%" }}>
       <div className="flex justify-between items-center">

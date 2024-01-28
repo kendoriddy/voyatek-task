@@ -2,6 +2,7 @@ import React from "react";
 import arrow from "../../../assets/images/svg/arrow_back.svg";
 import CustomerCard from "./CustomerCard";
 import { Link } from "react-router-dom";
+import TransactionTable from "./TransactionTable";
 
 const CustomerTransactionContent = () => {
   return (
@@ -12,6 +13,7 @@ const CustomerTransactionContent = () => {
         </div>
       </Link>
       <CustomerCard />
+      <TransactionTable />
     </div>
   );
 };
