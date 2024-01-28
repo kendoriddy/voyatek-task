@@ -25,7 +25,28 @@ const LoginForm = () => {
     <div className="w-full">
       <form onSubmit={handleSubmit}>
         <div className="flex flex-col gap-6">
-          <TextField id="outlined-basic" label="Business Email" variant="outlined" fullWidth />
+          <TextField
+            id="outlined-basic"
+            label="Business Email"
+            variant="outlined"
+            fullWidth
+            sx={{
+              "& .MuiOutlinedInput-root": {
+                "& fieldset": {
+                  borderColor: "#025C56",
+                  border: "1px solid #025c56",
+                },
+                "&:hover fieldset": {
+                  borderColor: "#025C56",
+                  border: "1px solid #025c56",
+                },
+                "&.Mui-focused fieldset": {
+                  borderColor: "#025C56",
+                  border: "1px solid #025c56",
+                },
+              },
+            }}
+          />
           <div className="flex flex-col gap-2">
             <TextField
               id="outlined-password-input"
@@ -45,6 +66,22 @@ const LoginForm = () => {
                   </InputAdornment>
                 ),
               }}
+              sx={{
+                "& .MuiOutlinedInput-root": {
+                  "& fieldset": {
+                    borderColor: "#025C56",
+                    border: "1px solid #025c56",
+                  },
+                  "&:hover fieldset": {
+                    borderColor: "#025C56",
+                    border: "1px solid #025c56",
+                  },
+                  "&.Mui-focused fieldset": {
+                    borderColor: "#025C56",
+                    border: "1px solid #025c56",
+                  },
+                },
+              }}
             />
             <span className="flex justify-end text-[#025C56] text-xs font-medium px-[14px]">
               Forgot password?
@@ -59,8 +96,9 @@ const LoginForm = () => {
           >
             {isLoading ? <CircularProgress size={24} /> : "Sign in"}
           </button>
-          <p className="text-[#025C56] font-medium text-xs text-center">
-            Don’t have an account on Project-X? Sign up
+          <p className="text-[#012320] font-normal text-xs text-center">
+            Don’t have an account on Project-X?{" "}
+            <span className="text-[#025C56] font-medium text-xs text-center">Sign up</span>
           </p>
         </div>
       </form>
