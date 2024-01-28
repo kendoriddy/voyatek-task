@@ -6,6 +6,7 @@ PROJECT-X
 
 - [Description](#description)
 - [Features](#features)
+- [Live Demo](#LiveDemo)
 - [Getting Started](#GettingStarted)
   - [Cloning the project](#Cloningtheproject)
   - [Getting packages and dependencies](#Gettingpackagesanddependencies)
@@ -16,6 +17,11 @@ PROJECT-X
 
 PROJECT-X is a payment platform that allows users to view their payment transactions and add payments.
 
+![](./src/assets/images/png/screen0.png)
+![](./src/assets/images/png/screen1.png)
+![](./src/assets/images/png/screen2.png)
+![](./src/assets/images/png/screen3.png)
+
 ## Features
 
 List the key features of your payment platform. This can include things like:
@@ -24,6 +30,10 @@ List the key features of your payment platform. This can include things like:
 - Payment processing
 - Dashboard for users to manage their payments
 - Reporting and analytics
+
+## Live Demo
+
+[Live demo](https://mathe-magic.netlify.app/)
 
 ## Getting Started
 
