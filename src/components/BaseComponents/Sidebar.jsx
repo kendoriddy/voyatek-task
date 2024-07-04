@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { List, ListItem, ListItemIcon, ListItemText, Drawer, Box } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
 import { User, Lock, BellSimple, Money, Tag, Users, Cloud } from "@phosphor-icons/react";
