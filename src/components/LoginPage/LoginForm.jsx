@@ -17,7 +17,7 @@ const LoginForm = () => {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
-      navigate("/dashboard/payment-in");
+      navigate("/dashboard/settings");
     }, 1500);
   };
 
@@ -91,7 +91,7 @@ const LoginForm = () => {
             {isLoading ? <CircularProgress size={24} /> : "Sign in"}
           </button>
           <p className="text-[#012320] font-normal text-xs text-center">
-            Don’t have an account on Project-X?{" "}
+            Don’t have an account on Voyatek-X?{" "}
             <span className="text-[#025C56] font-medium text-xs text-center">Sign up</span>
           </p>
         </div>

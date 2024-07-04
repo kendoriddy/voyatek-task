@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Drawer, Box, IconButton } from "@mui/material";
+import { Drawer, Box, IconButton, AppBar, Toolbar, Typography } from "@mui/material";
 import Sidebar from "./Sidebar";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import HeaderComponent from "./Header";
 
 function Layout({ children }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -12,34 +13,34 @@ function Layout({ children }) {
   };
 
   return (
-    <Box sx={{ display: "flex", minHeight: "100vh" }}>
-      <Drawer
-        variant="permanent"
-        anchor="left"
-        open={isSidebarOpen}
-        sx={{
-          width: isSidebarOpen ? "20vw" : "0",
-          flexShrink: 0,
-          transition: "width 300ms ease-in-out",
-          overflowX: "hidden",
-          "& .MuiDrawer-paper": {
+    <Box sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+      <HeaderComponent toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
+      <Toolbar />
+
+      <Box sx={{ display: "flex", flexGrow: 1, mt: 2 }}>
+        <Drawer
+          variant="permanent"
+          anchor="left"
+          open={isSidebarOpen}
+          sx={{
             width: isSidebarOpen ? "20vw" : "0",
-          },
-        }}
-      >
-        <Sidebar isSidebarOpen={isSidebarOpen} />
-      </Drawer>
-
-      <Box component="main" sx={{ flexGrow: 1, p: 3, width: "80vw" }}>
-        <IconButton
-          color="inherit"
-          aria-label="open sidebar"
-          onClick={toggleSidebar}
+            flexShrink: 0,
+            transition: "width 300ms ease-in-out",
+            overflowX: "hidden",
+            "& .MuiDrawer-paper": {
+              width: isSidebarOpen ? "20vw" : "0",
+              mt: "4px", // Adjust height for AppBar
+              height: "calc(100vh - 64px)", // Full height minus AppBar height
+              position: "relative", // Ensures the Drawer is positioned correctly
+            },
+          }}
         >
-          {isSidebarOpen ? <CloseIcon /> : <MenuIcon />}
-        </IconButton>
+          <Sidebar isSidebarOpen={isSidebarOpen} />
+        </Drawer>
 
-        {children}
+        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+          {children}
+        </Box>
       </Box>
     </Box>
   );

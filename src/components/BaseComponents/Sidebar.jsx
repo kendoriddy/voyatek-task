@@ -1,37 +1,26 @@
 import React, { useState } from "react";
-import {
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  Drawer,
-  Typography,
-  Box,
-  Divider,
-  Collapse,
-} from "@mui/material";
+import { List, ListItem, ListItemIcon, ListItemText, Drawer, Box } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
-import createSVG from "../../assets/images/svg/create.svg";
-import checkSVG from "../../assets/images/svg/fact_check.svg";
-import homeSVG from "../../assets/images/svg/home.svg";
-import inboxSVG from "../../assets/images/svg/inbox.svg";
-import insertSVG from "../../assets/images/svg/insert_chart.svg";
+import { User, Lock, BellSimple, Money, Tag, Users, Cloud } from "@phosphor-icons/react";
 import logoutSVG from "../../assets/images/svg/logout.svg";
-import monetizationSVG from "../../assets/images/svg/monetization_on.svg";
-import chartSVG from "../../assets/images/svg/pie_chart.svg";
-import settingsSVG from "../../assets/images/svg/settings.svg";
-import arrowDownSVG from "../../assets/images/svg/keyboard_arrow_down.svg";
-import leslie from "../../assets/images/jpg/leslie.jpg";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
-function Sidebar() {
+const Sidebar = () => {
   const location = useLocation();
   const [open, setOpen] = useState(false);
 
   const handleClick = () => {
     setOpen(!open);
   };
+
+  const menuItems = [
+    { text: "Account", icon: <User />, path: "#" },
+    { text: "Security", icon: <Lock />, path: "#" },
+    { text: "Notifications", icon: <BellSimple />, path: "#" },
+    { text: "Pricing", icon: <Money />, path: "#" },
+    { text: "Sales", icon: <Tag />, path: "#" },
+    { text: "Users and Roles", icon: <Users />, path: "/dashboard/settings" },
+    { text: "Backups", icon: <Cloud />, path: "#" },
+  ];
 
   return (
     <Drawer
@@ -45,7 +34,7 @@ function Sidebar() {
         justifyContent: "space-between",
         "& .MuiDrawer-paper": {
           borderRight:
-            location.pathname === "/dashboard/payment-in/customer-transaction"
+            location.pathname === "/dashboard/settings/customer-transaction"
               ? "1px solid #BDC3C3"
               : "none",
         },
@@ -61,190 +50,62 @@ function Sidebar() {
         }}
       >
         <Box>
-          <Typography variant="h6" component="div" sx={{ padding: "40px 0 0 30px" }}>
-            PROJECT-X
-          </Typography>
           <List
             sx={{ width: "20vw", paddingTop: "40px", paddingLeft: "10px", paddingRight: "10px" }}
           >
-            <ListItem button component={Link} to="/dashboard/payment-in">
-              <ListItemIcon sx={{ marginRight: "16px", minWidth: "0" }}>
-                <img src={homeSVG} alt="overview" />
-              </ListItemIcon>
-              <ListItemText primary="Overview" sx={{ color: "#748684" }} />
-            </ListItem>
-            <ListItem button component={Link} to="/dashboard/payment-in">
-              <ListItemIcon sx={{ marginRight: "16px", minWidth: "0" }}>
-                <img src={inboxSVG} alt="inbox" />
-              </ListItemIcon>
-              <ListItemText primary="Inbox" sx={{ color: "#748684" }} />
-            </ListItem>
-            <ListItem
-              button
-              onClick={handleClick}
-              sx={{
-                backgroundColor:
-                  location.pathname === "/dashboard/payment-in" ||
-                  location.pathname === "/dashboard/payment-in/customer-transaction"
-                    ? "#025C56"
-                    : "transparent",
-                borderRadius:
-                  location.pathname === "/dashboard/payment-in" ||
-                  location.pathname === "/dashboard/payment-in/customer-transaction"
-                    ? "100px"
-                    : "",
-                color:
-                  location.pathname === "/dashboard/payment-in" ||
-                  location.pathname === "/dashboard/payment-in/customer-transaction"
-                    ? "white"
-                    : "",
-                "&:hover": {
-                  backgroundColor: "#025C56",
-                },
-              }}
-            >
-              <ListItemIcon sx={{ marginRight: "16px", minWidth: "0" }}>
-                <img src={checkSVG} alt="receivables" />
-              </ListItemIcon>
-              <ListItemText primary="Receivables" />
-              {open ? (
-                <ExpandMoreIcon sx={{ color: "#fff" }} />
-              ) : (
-                <ChevronRightIcon sx={{ color: "#fff" }} />
-              )}
-            </ListItem>
-            <Collapse in={open} timeout="auto" unmountOnExit>
-              <List component="div" disablePadding>
-                <ListItem
-                  button
-                  component={Link}
-                  to="/dashboard/payment-in"
-                  sx={{ paddingLeft: "32px" }}
-                >
-                  <ListItemText
-                    primary="Invoices"
-                    sx={{ fontSize: "14px", fontWeight: "400", color: "#748684" }}
-                  />
-                </ListItem>
-                <ListItem
-                  button
-                  component={Link}
-                  to="/dashboard/payment-in"
+            <h4 className="font-semibold">Settings</h4>
+            {menuItems.map((item, index) => (
+              <ListItem
+                button
+                component={Link}
+                to={item.path}
+                key={index}
+                sx={{
+                  backgroundColor: location.pathname === item.path ? "#f0f6fe" : "transparent",
+                  color: location.pathname === item.path ? "#0d6efd" : "#748684",
+                }}
+              >
+                <ListItemIcon
                   sx={{
-                    color: location.pathname === "/dashboard/payment-in" ? "#025C56" : "#748684",
-                    paddingLeft: "32px",
+                    marginRight: "16px",
+                    minWidth: "0",
+                    color: location.pathname === item.path ? "#0d6efd" : "#748684",
                   }}
                 >
-                  <ListItemText
-                    primary="Payments In"
-                    sx={{
-                      fontSize: "14px",
-                      color:
-                        location.pathname === "/dashboard/payment-in" ||
-                        location.pathname === "/dashboard/payment-in/customer-transaction"
-                          ? "#025C56"
-                          : "#748684",
-                      "& span": {
-                        fontWeight:
-                          location.pathname === "/dashboard/payment-in" ||
-                          location.pathname === "/dashboard/payment-in/customer-transaction"
-                            ? "600"
-                            : "400",
-                      },
-                    }}
-                  />
-                </ListItem>
-                <ListItem
-                  button
-                  component={Link}
-                  to="/dashboard/payment-in"
-                  sx={{ paddingLeft: "32px" }}
-                >
-                  <ListItemText
-                    primary="Products"
-                    sx={{ fontSize: "14px", fontWeight: "400", color: "#748684" }}
-                  />
-                </ListItem>
-                <ListItem
-                  button
-                  component={Link}
-                  to="/dashboard/payment-in"
-                  sx={{ paddingLeft: "32px" }}
-                  className="text-sm font-normal"
-                >
-                  <ListItemText
-                    primary="Customers"
-                    sx={{ fontSize: "14px", fontWeight: "400", color: "#748684" }}
-                  />
-                </ListItem>
-              </List>
-            </Collapse>
-
-            <ListItem button component={Link} to="/dashboard/payment-in">
-              <ListItemIcon sx={{ marginRight: "16px", minWidth: "0" }}>
-                <img src={monetizationSVG} alt="payables" />
-              </ListItemIcon>
-              <ListItemText primary="Payables" sx={{ color: "#748684" }} />
-              <ChevronRightIcon sx={{ color: "#748684" }} />
-            </ListItem>
-
-            <ListItem button component={Link} to="/dashboard/payment-in">
-              <ListItemIcon sx={{ marginRight: "16px", minWidth: "0" }}>
-                <img src={insertSVG} alt="reports" />
-              </ListItemIcon>
-              <ListItemText primary="Reports" sx={{ color: "#748684" }} />
-            </ListItem>
-            <ListItem button component={Link} to="/dashboard/payment-in">
-              <ListItemIcon sx={{ marginRight: "16px", minWidth: "0" }}>
-                <img src={createSVG} alt="configuration" />
-              </ListItemIcon>
-              <ListItemText primary="Configuration" sx={{ color: "#748684" }} />
-            </ListItem>
-            <ListItem button component={Link} to="/dashboard/payment-in">
-              <ListItemIcon sx={{ marginRight: "16px", minWidth: "0" }}>
-                <img src={chartSVG} alt="expenses" />
-              </ListItemIcon>
-              <ListItemText primary="Expenses" sx={{ color: "#748684" }} />
-            </ListItem>
-          </List>{" "}
+                  {item.icon}
+                </ListItemIcon>
+                <ListItemText primary={item.text} />
+              </ListItem>
+            ))}
+          </List>
         </Box>
         <Box sx={{ paddingBottom: "32px" }}>
           <List>
-            <ListItem button component={Link} to="/dashboard/payment-in">
-              <ListItemIcon sx={{ marginRight: "16px", minWidth: "0" }}>
-                <img src={settingsSVG} alt="Settings" />
-              </ListItemIcon>
-              <ListItemText primary="Settings" sx={{ color: "#748684" }} />
-            </ListItem>
             <ListItem button component={Link} to="/">
-              <ListItemIcon sx={{ marginRight: "16px", minWidth: "0" }}>
-                <img src={logoutSVG} alt="Logout" />
-              </ListItemIcon>
-              <ListItemText primary="Logout" sx={{ color: "#748684" }} />
+              <Box
+                sx={{
+                  border: "1px solid #ccc",
+                  borderRadius: "6px",
+                  paddingX: "4px",
+                  width: "fit-content",
+                  display: "flex",
+                  paddingY: "8px",
+                }}
+              >
+                <ListItemIcon sx={{ marginRight: "16px", minWidth: "0" }}>
+                  <img src={logoutSVG} alt="Logout" />
+                </ListItemIcon>
+                <ListItemText
+                  primary="Back to Dashboard"
+                  sx={{ color: "#748684", paddingRight: "8px" }}
+                />
+              </Box>
             </ListItem>
           </List>
-          <Divider />
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              padding: "16px",
-            }}
-          >
-            <div className="flex items-center">
-              <img src={leslie} alt="User" />
-              <div className="ml-4">
-                <p className="text-xs text-[#012320] font-medium">Michael Michael</p>
-                <span className="text-[10px] text-[#748684] font-normal">Administrator</span>
-              </div>
-            </div>
-            <img src={arrowDownSVG} alt="Arrow Down" sx={{ marginLeft: "auto" }} />
-          </Box>
         </Box>
       </Box>
     </Drawer>
   );
-}
+};
 
 export default Sidebar;

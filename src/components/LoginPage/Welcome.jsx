@@ -7,14 +7,14 @@ const Welcome = () => {
       <div className="flex justify-center items-center w-full text-center">
         <div></div>
         <span className="flex-grow font-inter text-[23px] font-medium text-[#012320] ml-[25px]">
-          PROJECT-X
+          Voyatek-X
         </span>
         <img src={close} alt="close icon" />
       </div>
       <div className="text-center flex flex-col">
         <span className="text-[#012320] text-[23px] font-medium">Welcome back</span>
         <p className="text-[#748684] text-[14px] font-normal">
-          Please, enter your login details to continue on Project-X
+          Please, enter your login details to continue
         </p>
       </div>
     </div>

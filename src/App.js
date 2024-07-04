@@ -1,9 +1,8 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
-import PaymentIn from "./pages/PaymentIn";
-import CustomerTransaction from "./pages/CustomerTransaction";
 import Layout from "./components/BaseComponents/Layout";
+import SettingsPage from "./pages/Settings";
 
 function App() {
   return (
@@ -11,18 +10,10 @@ function App() {
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route
-          path="/dashboard/payment-in"
+          path="/dashboard/settings"
           element={
             <Layout>
-              <PaymentIn />
-            </Layout>
-          }
-        />
-        <Route
-          path="/dashboard/payment-in/customer-transaction"
-          element={
-            <Layout>
-              <CustomerTransaction />
+              <SettingsPage />
             </Layout>
           }
         />
