@@ -1,5 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const UserContext = createContext();
 
@@ -7,15 +8,16 @@ const UserProvider = ({ children }) => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const apiUrl = process.env.REACT_APP_API_URL;
+
   const fetchUsers = async () => {
     setLoading(true);
     try {
-      const response = await axios.get(
-        "https://ca92310b3cdae1ce1b00.free.beeceptor.com/api/users/"
-      );
+      const response = await axios.get(`${apiUrl}`);
       setUsers(response.data);
+      toast.success("Users fetched successfully!");
     } catch (error) {
-      console.error("Error fetching users:", error);
+      toast.error("Error fetching users!");
     } finally {
       setLoading(false);
     }
@@ -27,31 +29,31 @@ const UserProvider = ({ children }) => {
 
   const addUser = async (user) => {
     try {
-      await axios.post("https://ca92310b3cdae1ce1b00.free.beeceptor.com/api/users/", user);
+      await axios.post(`${apiUrl}`, user);
       fetchUsers();
+      toast.success("User added successfully!");
     } catch (error) {
-      console.error("Error adding user:", error);
+      toast.error("Error adding user!");
     }
   };
 
   const updateUser = async (id, updatedUser) => {
     try {
-      await axios.put(
-        `https://ca92310b3cdae1ce1b00.free.beeceptor.com/api/users/${id}`,
-        updatedUser
-      );
+      await axios.put(`${apiUrl}${id}`, updatedUser);
       fetchUsers();
+      toast.success("User updated successfully!");
     } catch (error) {
-      console.error("Error updating user:", error);
+      toast.error("Error updating user!");
     }
   };
 
   const deleteUser = async (id) => {
     try {
-      await axios.delete(`https://ca92310b3cdae1ce1b00.free.beeceptor.com/api/users/${id}`);
+      await axios.delete(`${apiUrl}${id}`);
       fetchUsers();
+      toast.success("User deleted successfully!");
     } catch (error) {
-      console.error("Error deleting user:", error);
+      toast.error("Error deleting user!");
     }
   };
 

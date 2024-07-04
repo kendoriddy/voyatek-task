@@ -54,7 +54,7 @@ const columns = [
 ];
 
 export default function SettingsTable() {
-  const { users, loading, fetchUsers } = useContext(UserContext);
+  const { users, loading, fetchUsers, addUser } = useContext(UserContext);
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredRows, setFilteredRows] = useState([]);
 
@@ -75,7 +75,7 @@ export default function SettingsTable() {
 
   return (
     <div className="flex flex-col gap-4 w-full" style={{ width: "100%" }}>
-      <TableHeader setSearchQuery={setSearchQuery} />
+      <TableHeader setSearchQuery={setSearchQuery} onAddUser={addUser} />
       {loading ? <div>Loading...</div> : <CustomDataGrid columns={columns} rows={filteredRows} />}
     </div>
   );
