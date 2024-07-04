@@ -15,16 +15,16 @@ Voyatek-X
 
 ## Description
 
-Voyatek-X is a payment platform that allows users to view their payment transactions and add payments.
+Voyatek-X is a test application for user role management.
 
 ## Features
 
 List the key features of your payment platform. This can include things like:
 
-- User authentication and registration
-- Payment processing
-- Dashboard for users to manage their payments
-- Reporting and analytics
+- Adding a user
+- Viewing all users
+- Editing users' details
+- Deleting users
 
 ## Live Demo
 
@@ -37,7 +37,7 @@ To get a local copy up and running follow these simple example steps.
 ### Cloning the project
 
 ```
-git clone  https://github.com/kendoriddy/trooHQ.git <Your-Build-Directory>
+git clone  https://github.com/kendoriddy/voyatek-task <Your-Build-Directory>
 
 ```
 
