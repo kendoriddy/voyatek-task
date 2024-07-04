@@ -24,7 +24,6 @@ function Layout({ children }) {
           open={isSidebarOpen}
           sx={{
             width: isSidebarOpen ? "20vw" : "0",
-            flexShrink: 0,
             transition: "width 300ms ease-in-out",
             overflowX: "hidden",
             "& .MuiDrawer-paper": {
@@ -38,7 +37,7 @@ function Layout({ children }) {
           <Sidebar isSidebarOpen={isSidebarOpen} />
         </Drawer>
 
-        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+        <Box component="main" sx={{ flexGrow: 1, p: 3, width: isSidebarOpen ? "78vw" : "98vw" }}>
           {children}
         </Box>
       </Box>
