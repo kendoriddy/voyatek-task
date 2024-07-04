@@ -13,6 +13,7 @@ const CustomDataGrid = ({ columns, rows }) => {
       className="border-none"
       style={{ border: "none", width: "100%" }}
       checkboxSelection
+      getRowClassName={(params) => "data-row"}
     />
   );
 };

@@ -2,3 +2,10 @@ body {
   font-family: "Inter", sans-serif;
   background: #f0f2f5;
 }
+
+.custom-header-class .MuiDataGrid-columnHeaderTitle {
+  font-weight: 600;
+}
+.data-row {
+  background-color: #fff;
+}
