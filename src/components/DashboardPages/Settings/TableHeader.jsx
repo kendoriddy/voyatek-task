@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { TextField, Button, IconButton, InputAdornment } from "@mui/material";
 import FilterListIcon from "@mui/icons-material/FilterList";
-import { FilterList, Search } from "@mui/icons-material";
+import { Search } from "@mui/icons-material";
 import { PlusCircle } from "@phosphor-icons/react";
 import AddUserModal from "./UserModal";
 

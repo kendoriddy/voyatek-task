@@ -1,6 +1,6 @@
 # Project Name
 
-PROJECT-X
+Voyatek-X
 
 ## Table of Contents
 
@@ -15,12 +15,7 @@ PROJECT-X
 
 ## Description
 
-PROJECT-X is a payment platform that allows users to view their payment transactions and add payments.
-
-![](./src/assets/images/png/screen0.png)
-![](./src/assets/images/png/screen1.png)
-![](./src/assets/images/png/screen2.png)
-![](./src/assets/images/png/screen3.png)
+Voyatek-X is a payment platform that allows users to view their payment transactions and add payments.
 
 ## Features
 
@@ -33,7 +28,7 @@ List the key features of your payment platform. This can include things like:
 
 ## Live Demo
 
-[Live demo](https://project-x-by-troo.netlify.app/)
+[Live demo](https://voyatekx.netlify.app/)
 
 ## Getting Started
 

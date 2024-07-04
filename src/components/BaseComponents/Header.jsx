@@ -9,14 +9,12 @@ import {
   Menu,
   MenuItem,
   Typography,
-  List,
 } from "@mui/material";
 import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 import SearchIcon from "@mui/icons-material/Search";
 import bv from "../../assets/images/png/bv1.png";
 import bg from "../../assets/images/jpg/bg1.jpg";
-import { BellSimple, CaretDown, Gear, Hamburger, Question, Wallet, X } from "@phosphor-icons/react";
-import { Close } from "@mui/icons-material";
+import { BellSimple, CaretDown, Gear, Question, Wallet, X } from "@phosphor-icons/react";
 
 const HeaderComponent = ({ toggleSidebar, isSidebarOpen }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);

@@ -25,6 +25,8 @@ const UserProvider = ({ children }) => {
 
   useEffect(() => {
     fetchUsers();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const addUser = async (user) => {

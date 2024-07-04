@@ -6,11 +6,6 @@ import logoutSVG from "../../assets/images/svg/logout.svg";
 
 const Sidebar = () => {
   const location = useLocation();
-  const [open, setOpen] = useState(false);
-
-  const handleClick = () => {
-    setOpen(!open);
-  };
 
   const menuItems = [
     { text: "Account", icon: <User />, path: "#" },

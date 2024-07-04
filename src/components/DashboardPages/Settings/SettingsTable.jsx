@@ -9,12 +9,14 @@ export default function SettingsTable() {
   const { users, loading, fetchUsers, addUser, updateUser, deleteUser } = useContext(UserContext);
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredRows, setFilteredRows] = useState([]);
-  const [isEditModalOpen, setIsEditModalOpen] = useState(false); // State for edit modal
-  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false); // State for delete modal
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const [selectedUser, setSelectedUser] = useState(null);
 
   useEffect(() => {
     fetchUsers();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {

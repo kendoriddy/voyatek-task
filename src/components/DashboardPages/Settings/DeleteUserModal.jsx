@@ -1,6 +1,5 @@
 import React from "react";
 import { Trash, X } from "@phosphor-icons/react";
-import { toast } from "react-toastify";
 
 const DeleteUserModal = ({ open, onClose, onDeleteUser, user }) => {
   const handleDelete = () => {

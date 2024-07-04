@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import { Drawer, Box, IconButton, AppBar, Toolbar, Typography } from "@mui/material";
+import { Drawer, Box, Toolbar } from "@mui/material";
 import Sidebar from "./Sidebar";
-import MenuIcon from "@mui/icons-material/Menu";
-import CloseIcon from "@mui/icons-material/Close";
 import HeaderComponent from "./Header";
 
 function Layout({ children }) {
